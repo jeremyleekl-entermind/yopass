@@ -3,6 +3,14 @@
   themes: all;
 }
 
+/* Entermind Pass brand primary override (Entermind blue #0033CC family) */
+html[data-theme='emerald'],
+html[data-theme='dim'] {
+  --p: oklch(0.46 0.24 265);
+  --pf: oklch(0.41 0.22 265);
+  --pc: oklch(0.98 0.01 265);
+}
+
 @keyframes result-enter {
   from {
     opacity: 0;
