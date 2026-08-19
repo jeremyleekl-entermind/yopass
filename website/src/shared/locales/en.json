@@ -110,25 +110,25 @@
   },
   "features": {
     "title": "Share secrets securely with ease",
-    "subtitle": "Yopass is created to reduce the amount of clear text passwords stored in email and chat conversations by encrypting and generating a short lived link which can only be viewed once.",
+    "subtitle": "Entermind Pass reduces the amount of clear text passwords stored in email and chat conversations by encrypting and generating a short lived link which can only be viewed once.",
     "featureEndToEndTitle": "End-to-End Encryption",
-    "featureEndToEndText": "Encryption and decryption are being made locally in the browser. The key is never stored with yopass.",
+    "featureEndToEndText": "Encryption and decryption happen locally in your browser. The key is never stored with Entermind Pass.",
     "featureSelfDestructionTitle": "Self Destruction",
     "featureSelfDestructionText": "Encrypted messages have a fixed lifetime and will be deleted automatically after expiration.",
     "featureOneTimeTitle": "One-time Downloads",
     "featureOneTimeText": "The encrypted message can only be downloaded once which reduces the risk of someone peeking at your secrets.",
     "featureSimpleSharingTitle": "Simple Sharing",
-    "featureSimpleSharingText": "Yopass generates a unique one click link for the encrypted file or message. The decryption password can alternatively be sent separately.",
+    "featureSimpleSharingText": "Entermind Pass generates a unique one-click link for the encrypted file or message. The decryption password can alternatively be sent separately.",
     "featureNoAccountsTitle": "No Accounts Needed",
     "featureNoAccountsText": "Sharing should be quick and easy; No additional information except the encrypted secret is stored in the database.",
     "featureOpenSourceTitle": "Open Source Software",
-    "featureOpenSourceText": "Yopass encryption mechanism are built on open source software meaning full transparency with the possibility to audit and submit features."
+    "featureOpenSourceText": "Entermind Pass encryption is built on open source software, meaning full transparency with the possibility to audit and submit features."
   },
   "header": {
     "buttonHome": "Home",
     "buttonUpload": "Upload",
     "buttonText": "Text",
-    "appName": "Yopass",
+    "appName": "Entermind Pass",
     "buttonRequests": "Requests",
     "requestsWithCount": "{{count}} secrets waiting to be collected",
     "buttonReceipts": "Receipts"
@@ -284,5 +284,29 @@
     "language": "Language",
     "theme": "Theme",
     "darkModeToggle": "Dark mode"
+  },
+  "passGen": {
+    "title": "Password Generator",
+    "subtitle": "Generate strong, random passwords in your browser. Nothing leaves this page.",
+    "lengthLabel": "Length",
+    "lengthUnit": "characters",
+    "lowercase": "Lowercase (a-z)",
+    "uppercase": "Uppercase (A-Z)",
+    "numbers": "Numbers (0-9)",
+    "symbols": "Symbols (!@#$%^&*)",
+    "excludeAmbiguous": "Exclude ambiguous characters (Il1O0)",
+    "noDuplicates": "No duplicate characters",
+    "generatedLabel": "Generated password",
+    "buttonGenerate": "Generate Password",
+    "buttonCopy": "Copy",
+    "buttonRegenerate": "Regenerate",
+    "copied": "Copied!",
+    "strengthWeak": "Weak",
+    "strengthFair": "Fair",
+    "strengthGood": "Good",
+    "strengthStrong": "Strong",
+    "strengthExcellent": "Excellent",
+    "emptyHint": "Your generated password will appear here",
+    "backToSecrets": "Back to secret sharing"
   }
 }

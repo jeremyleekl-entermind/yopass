@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import FeaturesSection from '@shared/components/FeaturesSection';
 import CreateSecret from '@features/CreateSecret';
+import PasswordGenerator from '@features/PasswordGenerator';
 import { Routes, Route, HashRouter } from 'react-router-dom';
 import { useConfig } from '@shared/hooks/useConfig';
 import { useAuth } from '@shared/hooks/useAuth';
@@ -115,6 +116,10 @@ export default function App() {
                     <Route path="/upload" element={<StreamingUpload />} />
                   )
                 )}
+                <Route
+                  path="/generate"
+                  element={needsLogin ? <LoginRequired /> : <PasswordGenerator />}
+                />
                 {SECRET_REQUESTS && (
                   <>
                     <Route

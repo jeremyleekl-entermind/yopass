@@ -117,6 +117,30 @@ export interface TranslationResources {
     requestsWithCount: string;
     appName: string;
   };
+  passGen: {
+    title: string;
+    subtitle: string;
+    lengthLabel: string;
+    lengthUnit: string;
+    lowercase: string;
+    uppercase: string;
+    numbers: string;
+    symbols: string;
+    excludeAmbiguous: string;
+    noDuplicates: string;
+    generatedLabel: string;
+    buttonGenerate: string;
+    buttonCopy: string;
+    buttonRegenerate: string;
+    copied: string;
+    strengthWeak: string;
+    strengthFair: string;
+    strengthGood: string;
+    strengthStrong: string;
+    strengthExcellent: string;
+    emptyHint: string;
+    backToSecrets: string;
+  };
   request: {
     createTitle: string;
     createSubtitle: string;

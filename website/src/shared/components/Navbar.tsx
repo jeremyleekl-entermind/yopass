@@ -116,6 +116,30 @@ export default function Navbar() {
                 )
               ))}
 
+            <a
+              className="flex items-center gap-2 px-2 sm:px-3 py-2 text-sm font-medium text-base-content/70 hover:text-base-content hover:bg-base-200 rounded-md transition-all duration-200"
+              href="#/generate"
+              title={t('passGen.title')}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-5 h-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
+                />
+              </svg>
+              <span className="hidden sm:inline">
+                {t('passGen.title')}
+              </span>
+            </a>
+
             {SECRET_REQUESTS && (
               <a
                 className={`flex items-center gap-2 px-2 sm:px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 ${
