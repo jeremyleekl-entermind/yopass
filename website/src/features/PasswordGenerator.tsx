@@ -50,8 +50,8 @@ export default function PasswordGenerator() {
 
   return (
     <div className="card bg-base-100 shadow-sm border border-base-300">
-      <div className="card-body p-6 sm:p-8">
-        <div className="flex items-center justify-between mb-2">
+      <div className="card-body p-0">
+        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mb-2">
           <h2 className="text-3xl font-bold">{t('passGen.title')}</h2>
           <a
             href="#/"

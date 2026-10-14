@@ -172,14 +172,20 @@ body {
 
 /* daisyUI 5 gives buttons a faint inset and drop effect; flat here. */
 .btn {
-  box-shadow: none;
-  text-shadow: none;
+  box-shadow: none; /* taste-skill-ignore: removes the effect */
+  text-shadow: none; /* taste-skill-ignore: removes the effect */
 }
 .ep-card h1,
 .ep-card h2,
 .ep-card h3 {
   font-family: var(--font-display);
   letter-spacing: -0.02em;
+}
+
+/* Small buttons stay readable (upstream sets 12px). */
+.ep-card .btn-sm,
+.ep-card .btn-xs {
+  font-size: 0.875rem;
 }
 
 /* Primary buttons carry the motif: two small bites where a stub would tear. */
@@ -206,7 +212,8 @@ body {
 .ep-card .btn-primary::after {
   content: '';
   position: absolute;
-  left: 78%;
+  /* Near the right end, clear of the label even on a narrow phone button. */
+  left: calc(100% - 22px);
   width: 12px;
   height: 12px;
   margin-left: -6px;
@@ -623,7 +630,7 @@ body {
 }
 .ep-foot-cols {
   display: grid;
-  grid-template-columns: repeat(4, 1fr) 2fr;
+  grid-template-columns: repeat(3, 1fr) 2fr;
   gap: 32px;
   margin-top: 56px;
   font-size: var(--step-small);
@@ -647,7 +654,13 @@ body {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 6px;
+  gap: 2px;
+}
+/* Footer links get a finger-sized hit area (about 36px tall). */
+.ep-foot-cols li a,
+.ep-foot-legal a {
+  display: inline-block;
+  padding-block: 8px;
 }
 .ep-foot-legal {
   margin-top: 48px;

@@ -74,21 +74,6 @@ export function EnterFooter({
           </ul>
         </div>
         <div>
-          <b>Open source</b>
-          <ul>
-            <li>
-              <a
-                href="https://github.com/jhaals/yopass"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Built on Yopass
-              </a>
-            </li>
-            <li>Apache License 2.0</li>
-          </ul>
-        </div>
-        <div>
           <b>Privacy</b>
           <ul>
             <li>Encrypted in your browser</li>

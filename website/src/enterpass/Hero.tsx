@@ -67,8 +67,13 @@ export function HeroField() {
         className="ep-jump"
         onClick={() => {
           const box = document.getElementById('secret');
-          box?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          box?.focus({ preventScroll: true });
+          if (!box) {
+            // Not on the encrypt page (e.g. the generator): go there.
+            window.location.hash = '#/';
+            return;
+          }
+          box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          box.focus({ preventScroll: true });
         }}
       >
         Write a secret
