@@ -2,14 +2,7 @@
 @plugin "daisyui" {
   themes: all;
 }
-
-/* Entermind Pass brand primary override (Entermind blue #0033CC family).
-   daisyUI 5 variable names; the v4 names (--p, --pf, --pc) are ignored by v5. */
-html[data-theme='emerald'],
-html[data-theme='dim'] {
-  --color-primary: oklch(0.46 0.24 265);
-  --color-primary-content: oklch(0.98 0.01 265);
-}
+@import './enterpass.css';
 
 @keyframes result-enter {
   from {

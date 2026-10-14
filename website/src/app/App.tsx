@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import FeaturesSection from '@shared/components/FeaturesSection';
 import CreateSecret from '@features/CreateSecret';
 import PasswordGenerator from '@features/PasswordGenerator';
-import { Routes, Route, HashRouter } from 'react-router-dom';
+import { Routes, Route, HashRouter, useLocation } from 'react-router-dom';
 import { useConfig } from '@shared/hooks/useConfig';
 import { useAuth } from '@shared/hooks/useAuth';
 import Navbar from '@shared/components/Navbar';
@@ -15,6 +14,29 @@ import RequestList from '@features/request-secret/RequestList';
 import ProvideSecret from '@features/request-secret/ProvideSecret';
 import ReceiptList from '@features/receipts/ReceiptList';
 import { useTranslation } from 'react-i18next';
+import { Barcode, HeroField } from '../enterpass/Hero';
+import {
+  Board,
+  HowItWorks,
+  PasswordCta,
+  TicketHistory,
+} from '../enterpass/Sections';
+import { EnterFooter } from '../enterpass/Footer';
+import { useMotionReady } from '../enterpass/motion';
+
+// The landing sections belong to the home page only.
+function HomeSections() {
+  const { pathname } = useLocation();
+  if (pathname !== '/') return null;
+  return (
+    <>
+      <HowItWorks />
+      <TicketHistory />
+      <Board />
+      <PasswordCta />
+    </>
+  );
+}
 
 export default function App() {
   const {
@@ -28,6 +50,7 @@ export default function App() {
   } = useConfig();
   const { isAuthenticated, loading: authLoading } = useAuth();
   const { t } = useTranslation();
+  useMotionReady();
 
   const [loginUnavailable, setLoginUnavailable] = useState(() => {
     const params = new URLSearchParams(window.location.search);
@@ -45,7 +68,7 @@ export default function App() {
   // Whether creation pages must show the login gate instead of their content.
   const needsLogin = REQUIRE_AUTH && !authLoading && !isAuthenticated;
   return (
-    <div className="min-h-screen bg-base-200 flex flex-col overflow-x-hidden">
+    <div className="min-h-svh bg-base-200 flex flex-col overflow-x-hidden">
       <button
         onClick={() => {
           const main = document.getElementById('main-content');
@@ -63,10 +86,11 @@ export default function App() {
         <main
           id="main-content"
           tabIndex={-1}
-          className="w-full max-w-3xl mx-auto mb-auto px-4 py-12 sm:py-16 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          className="w-full mb-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
-          <div className="card bg-base-100 shadow-sm border border-base-300">
-            <div className="card-body p-6 sm:p-10">
+          <div className="ep-shell">
+            <div className="ep-card ep-pass" data-theme="enterpass-light">
+              <Barcode />
               {loginUnavailable && (
                 <div role="alert" className="alert alert-warning mb-6">
                   <svg
@@ -143,56 +167,17 @@ export default function App() {
                 <Route path="/:format/:key" element={<Prefetcher />} />
               </Routes>
             </div>
+            <HeroField />
           </div>
-          <FeaturesSection />
+          <HomeSections />
         </main>
+        <EnterFooter
+          privacyUrl={PRIVACY_NOTICE_URL}
+          imprintUrl={IMPRINT_URL}
+          privacyLabel={t('footer.privacyNotice')}
+          imprintLabel={t('footer.imprint')}
+        />
       </HashRouter>
-      {/* Footer */}
-      <footer className="bg-base-100/50 border-t border-base-300">
-        <div className="container mx-auto px-4 py-8">
-          <div className="flex flex-col items-center text-center space-y-4">
-            <div className="flex flex-wrap items-center justify-center gap-2 text-sm">
-              {PRIVACY_NOTICE_URL && PRIVACY_NOTICE_URL.trim() && (
-                <>
-                  <a
-                    href={PRIVACY_NOTICE_URL}
-                    className="text-base-content/70 hover:text-primary transition-colors duration-200 underline decoration-dotted underline-offset-4 hover:decoration-solid"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {t('footer.privacyNotice')}
-                  </a>
-                  <span className="text-base-content/40">•</span>
-                </>
-              )}
-              {IMPRINT_URL && IMPRINT_URL.trim() && (
-                <>
-                  <a
-                    href={IMPRINT_URL}
-                    className="text-base-content/70 hover:text-primary transition-colors duration-200 underline decoration-dotted underline-offset-4 hover:decoration-solid"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {t('footer.imprint')}
-                  </a>
-                  <span className="text-base-content/40">•</span>
-                </>
-              )}
-              <span className="text-base-content/70">
-                &copy; {new Date().getFullYear()}{' '}
-                <a
-                  href="https://entermind.com"
-                  className="text-primary hover:text-primary-focus font-medium transition-colors duration-200 underline decoration-dotted underline-offset-4 hover:decoration-solid"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Entermind
-                </a>
-              </span>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

@@ -46,8 +46,8 @@ export default function Navbar() {
   }, [SECRET_REQUESTS, location.pathname]);
 
   return (
-    <header className="sticky top-0 z-50 bg-base-100/80 backdrop-blur-lg border-b border-base-300">
-      <div className="max-w-5xl mx-auto px-4">
+    <header className="relative z-50 bg-base-200 font-display">
+      <div className="px-3 sm:px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center min-w-0">
             <a
@@ -57,7 +57,7 @@ export default function Navbar() {
               {customBranding ? (
                 <>
                   <img
-                    src={LOGO_URL ?? '/entermind-pass.svg'}
+                    src={LOGO_URL ?? '/enterpass.svg'}
                     alt={APP_NAME ?? t('header.appName')}
                     className={`h-8 w-auto max-w-16 object-contain shrink-0${HIDE_APP_NAME ? '' : ' mr-2 sm:mr-3'}`}
                   />
@@ -68,10 +68,10 @@ export default function Navbar() {
                   )}
                 </>
               ) : (
-                // Entermind Pass: icon + name instead of the Yopass wordmark
+                // EnterPass: icon + name instead of the Yopass wordmark
                 <>
                   <img
-                    src="/entermind-pass.svg"
+                    src="/enterpass.svg"
                     alt=""
                     width={32}
                     height={32}

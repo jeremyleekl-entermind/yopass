@@ -26,7 +26,7 @@
   // Request logs would contain secret IDs (upstream 14.10 removed them from
   // its own logs), so Workers Logs stay off.
   "observability": { "enabled": false },
-  "vars": { "VERSION": "15.1.0+entermind-pass" },
+  "vars": { "VERSION": "15.1.0+enterpass" },
   "workers_dev": true,
   "preview_urls": false
 }

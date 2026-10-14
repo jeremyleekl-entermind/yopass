@@ -1,0 +1,952 @@
+/* EnterPass design system (taste-skill direction "One motif", seed 481843952).
+   The motif is the admission pass: a flat ticket with two semicircle notches
+   at its tear line. Colours are Entermind's (entermind.com CI); type is
+   Libre Franklin (display) and Source Serif 4 (text), both OFL, self-hosted. */
+
+@font-face {
+  font-family: 'Libre Franklin';
+  src: url('/fonts/libre-franklin-latin-700-normal.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  src: url('/fonts/source-serif-4-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  src: url('/fonts/source-serif-4-latin-600-normal.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  src: url('/fonts/source-serif-4-latin-400-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@plugin "daisyui/theme" {
+  name: 'enterpass-light';
+  color-scheme: light;
+  --color-base-100: #f3f4f7;
+  --color-base-200: #e4e7ee;
+  --color-base-300: #d3d8e3;
+  --color-base-content: #0a0a0f;
+  --color-primary: #1e40ff;
+  --color-primary-content: #ffffff;
+  --color-secondary: #00d670;
+  --color-secondary-content: #0a0a0f;
+  --color-accent: #00d670;
+  --color-accent-content: #0a0a0f;
+  --color-neutral: #0a0a0f;
+  --color-neutral-content: #f3f4f7;
+  --color-info: #1e40ff;
+  --color-info-content: #ffffff;
+  --color-success: #007a40;
+  --color-success-content: #ffffff;
+  --color-warning: #ffb020;
+  --color-warning-content: #0a0a0f;
+  --color-error: #d92d3a;
+  --color-error-content: #ffffff;
+  --radius-selector: 0rem;
+  --radius-field: 0rem;
+  --radius-box: 0rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@plugin "daisyui/theme" {
+  name: 'enterpass-dark';
+  color-scheme: dark;
+  --color-base-100: #14151d;
+  --color-base-200: #0a0a0f;
+  --color-base-300: #1d1f2b;
+  --color-base-content: #f3f4f7;
+  --color-primary: #1e40ff;
+  --color-primary-content: #ffffff;
+  --color-secondary: #00d670;
+  --color-secondary-content: #0a0a0f;
+  --color-accent: #00d670;
+  --color-accent-content: #0a0a0f;
+  --color-neutral: #f3f4f7;
+  --color-neutral-content: #0a0a0f;
+  --color-info: #6f8bff;
+  --color-info-content: #0a0a0f;
+  --color-success: #00d670;
+  --color-success-content: #0a0a0f;
+  --color-warning: #ffb020;
+  --color-warning-content: #0a0a0f;
+  --color-error: #ff5c66;
+  --color-error-content: #0a0a0f;
+  --radius-selector: 0rem;
+  --radius-field: 0rem;
+  --radius-box: 0rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+/* House rules through Tailwind's own tokens, so upstream components follow
+   without edits: square corners, nothing raised off the page at rest. */
+@theme {
+  --font-sans: 'Source Serif 4', ui-serif, Georgia, serif;
+  --font-display: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif;
+  --text-sm: 1rem;
+  --text-sm--line-height: 1.5;
+  --text-xs: 0.875rem;
+  --radius-sm: 0rem;
+  --radius-md: 0rem;
+  --radius-lg: 0rem;
+  --radius-xl: 0rem;
+  --radius-2xl: 0rem;
+  --shadow-sm: 0 0 #0000; /* taste-skill-ignore: removes shadows */
+  --shadow: 0 0 #0000; /* taste-skill-ignore: removes shadows */
+  --shadow-md: 0 0 #0000; /* taste-skill-ignore: removes shadows */
+}
+
+:root {
+  --ep-ink: #0a0a0f;
+  --ep-paper: #f3f4f7;
+  --ep-paper-step: #e4e7ee;
+  --ep-blue: #1e40ff;
+  --ep-green: #00d670;
+  --ep-navy: #16213e;
+  --ep-night: #0a0a0f;
+  --ep-margin: 12px;
+  --ep-notch: 14px;
+  --step-small: clamp(0.9375rem, 0.9rem + 0.1vw, 1rem);
+  --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --step-head: clamp(2rem, 1.3rem + 3.2vw, 4rem);
+  --step-display: clamp(3rem, 1.2rem + 6.2vw, 7.5rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--step-body);
+  line-height: 1.55;
+}
+
+.ep-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 0.92;
+}
+
+/* ---------- The pass: a ticket with two notches at its tear line ---------- */
+
+.ep-pass {
+  position: relative;
+  background: var(--ep-pass-bg, var(--ep-paper));
+  color: var(--ep-pass-ink, var(--ep-ink));
+}
+.ep-pass::before,
+.ep-pass::after {
+  content: '';
+  position: absolute;
+  left: var(--ep-tear, 72%);
+  width: calc(var(--ep-notch) * 2);
+  height: calc(var(--ep-notch) * 2);
+  margin-left: calc(var(--ep-notch) * -1);
+  border-radius: 50%;
+  background: var(--ep-notch-bg, var(--color-base-200));
+  pointer-events: none;
+}
+.ep-pass::before {
+  top: calc(var(--ep-notch) * -1);
+}
+.ep-pass::after {
+  bottom: calc(var(--ep-notch) * -1);
+}
+
+/* daisyUI 5 gives buttons a faint inset and drop effect; flat here. */
+.btn {
+  box-shadow: none;
+  text-shadow: none;
+}
+.ep-card h1,
+.ep-card h2,
+.ep-card h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Primary buttons carry the motif: two small bites where a stub would tear. */
+.ep-card .btn-primary {
+  position: relative;
+  border: 0;
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  transition:
+    transform 160ms var(--ease-out),
+    background-color 160ms var(--ease-out);
+}
+.ep-card .btn-primary:is(.btn-sm, .btn-xs)::before,
+.ep-card .btn-primary:is(.btn-sm, .btn-xs)::after {
+  display: none;
+}
+/* Upstream panels separate by a tone step, not an outline (form fields keep
+   theirs). */
+.ep-card .border-base-300:not(input, textarea, select),
+.ep-card .border:not(input, textarea, select, .btn) {
+  border-color: transparent;
+}
+.ep-card .btn-primary::before,
+.ep-card .btn-primary::after {
+  content: '';
+  position: absolute;
+  left: 78%;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  border-radius: 50%;
+  background: var(--ep-paper);
+}
+.ep-card .btn-primary::before {
+  top: -6px;
+}
+.ep-card .btn-primary::after {
+  bottom: -6px;
+}
+.ep-card .btn-primary:hover {
+  background: #1533d6;
+}
+.ep-card .btn-primary:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+/* ---------- Hero: the card beside the field ---------- */
+
+.ep-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--ep-margin);
+  padding: 0 var(--ep-margin) var(--ep-margin);
+  align-items: start;
+}
+
+.ep-card {
+  --ep-tear: 100%;
+  --ep-pass-bg: var(--ep-paper);
+  --ep-notch-bg: var(--color-base-200);
+  min-height: calc(100svh - 76px);
+  padding: 0 clamp(20px, 3.4vw, 56px) clamp(32px, 4vw, 64px);
+}
+.ep-card::before,
+.ep-card::after {
+  /* The card's notches sit on its outer edge, at the barcode band. */
+  left: auto;
+  right: calc(var(--ep-notch) * -1);
+  top: 42px;
+  bottom: auto;
+}
+.ep-card::before {
+  left: calc(var(--ep-notch) * -1);
+  right: auto;
+}
+
+.ep-barcode {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+  height: 56px;
+  margin: 0 calc(clamp(20px, 3.4vw, 56px) * -1) clamp(28px, 3vw, 44px);
+  padding: 0 clamp(20px, 3.4vw, 56px);
+  background: var(--ep-paper);
+  overflow: hidden;
+}
+.ep-barcode span {
+  background: var(--ep-ink);
+  flex: none;
+}
+
+.ep-field {
+  position: sticky;
+  top: var(--ep-margin);
+  height: calc(100svh - 76px);
+  min-height: 560px;
+  background: var(--ep-blue);
+  color: #ffffff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(24px, 3.4vw, 56px);
+}
+.ep-jump {
+  display: none;
+}
+.ep-field h1 {
+  font-size: var(--step-display);
+  text-transform: uppercase;
+  margin: 0;
+}
+.ep-field .ep-lead {
+  font-size: var(--step-lead);
+  line-height: 1.35;
+  max-width: 30ch;
+  margin-top: clamp(16px, 2vw, 28px);
+}
+
+/* The giant pass, cropped by the field: one shape at enormous scale. */
+.ep-giant {
+  --ep-notch: clamp(28px, 3.4vw, 56px);
+  --ep-pass-bg: var(--ep-paper);
+  --ep-notch-bg: var(--ep-blue);
+  --ep-tear: 68%;
+  position: absolute;
+  left: 16%;
+  right: -4%;
+  bottom: -14%;
+  height: 54%;
+}
+.ep-giant-state {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 68% 32%;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 1.6s ease,
+    visibility 0s linear 1.6s;
+}
+.ep-giant-state.is-on {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1.6s ease;
+}
+.ep-giant-main {
+  padding: clamp(20px, 2.4vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+  min-width: 0;
+}
+.ep-giant-main strong {
+  font-family: var(--font-display);
+  font-size: var(--step-head);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+.ep-giant-main span {
+  font-size: var(--step-body);
+  overflow-wrap: anywhere;
+}
+.ep-giant-stub {
+  background: var(--ep-paper-step);
+  padding: clamp(20px, 2.4vw, 40px) clamp(16px, 1.6vw, 28px);
+  font-family: var(--font-display);
+  font-size: var(--step-lead);
+  line-height: 1;
+}
+.ep-giant-state[data-state='gone'] .ep-giant-stub {
+  background: var(--ep-green);
+  transform: translate(14%, -12%) rotate(9deg);
+}
+
+/* ---------- Sections below the hero (home page only) ---------- */
+
+.ep-section {
+  margin-top: clamp(120px, 14vw, 220px);
+}
+
+/* How it works: one pass, four fields */
+.ep-fields {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.ep-f {
+  position: relative;
+  min-height: 84svh;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+.ep-f:nth-child(1) {
+  background: var(--ep-night);
+  color: var(--ep-paper);
+}
+.ep-f:nth-child(2) {
+  background: var(--ep-navy);
+  color: var(--ep-paper);
+}
+.ep-f:nth-child(3) {
+  background: var(--ep-blue);
+  color: #ffffff;
+}
+.ep-f:nth-child(4) {
+  background: var(--ep-paper);
+  color: var(--ep-ink);
+}
+.ep-f h2 {
+  font-size: var(--step-lead);
+  line-height: 1.1;
+  margin: 0;
+}
+.ep-f-card {
+  --ep-notch: 10px;
+  --ep-tear: 70%;
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  width: min(260px, 82%);
+  translate: -50% 0;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  min-height: 132px;
+  font-size: var(--step-small);
+  line-height: 1.35;
+  transition: transform 150ms var(--ease-out);
+}
+.ep-f:hover .ep-f-card {
+  transform: translateY(-6px);
+}
+.ep-f-card .ep-f-main {
+  padding: 14px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.ep-f-card .ep-f-stub {
+  background: var(--ep-paper-step);
+  padding: 14px 10px;
+  font-family: var(--font-display);
+  font-size: var(--step-small);
+}
+.ep-f-card b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--step-small);
+  margin-bottom: 6px;
+}
+.ep-f-clause {
+  margin-top: auto;
+  font-size: var(--step-lead);
+  line-height: 1.15;
+  max-width: 19ch;
+}
+.ep-f:nth-child(1) .ep-f-card {
+  --ep-notch-bg: var(--ep-night);
+}
+.ep-f:nth-child(2) .ep-f-card {
+  --ep-notch-bg: var(--ep-navy);
+}
+.ep-f:nth-child(3) .ep-f-card {
+  --ep-notch-bg: var(--ep-blue);
+}
+.ep-f:nth-child(4) .ep-f-card {
+  --ep-notch-bg: var(--ep-paper);
+  --ep-pass-bg: var(--ep-paper-step);
+}
+.ep-f:nth-child(4) .ep-f-card .ep-f-stub {
+  background: var(--ep-green);
+  transform: translate(18px, -14px) rotate(8deg);
+}
+
+/* Features: close-ups on a board */
+.ep-board {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 104px;
+  gap: 8px;
+  padding: 0 10px;
+}
+.ep-tile {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.ep-tile-cap {
+  position: relative;
+  z-index: 1;
+}
+.ep-tile-cap b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--step-body);
+}
+.ep-tile-cap span {
+  font-size: var(--step-small);
+  line-height: 1.4;
+  display: block;
+  max-width: 34ch;
+}
+.ep-tile [data-ui] {
+  position: absolute;
+  font-family: var(--font-display);
+}
+.ep-w6h4 {
+  grid-column: span 6;
+  grid-row: span 4;
+}
+.ep-w6h2 {
+  grid-column: span 6;
+  grid-row: span 2;
+}
+.ep-w3h4 {
+  grid-column: span 3;
+  grid-row: span 4;
+}
+.ep-w3h2 {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+.ep-c-night {
+  background: var(--ep-night);
+  color: var(--ep-paper);
+}
+.ep-c-navy {
+  background: var(--ep-navy);
+  color: var(--ep-paper);
+}
+.ep-c-blue {
+  background: var(--ep-blue);
+  color: #ffffff;
+}
+.ep-c-green {
+  background: var(--ep-green);
+  color: var(--ep-ink);
+}
+.ep-c-paper {
+  background: var(--ep-paper);
+  color: var(--ep-ink);
+}
+.ep-c-step {
+  background: var(--ep-paper-step);
+  color: var(--ep-ink);
+}
+.ep-board h2 {
+  font-size: var(--step-head);
+  line-height: 0.95;
+  margin: 0;
+}
+
+/* CTA: a sentence with a blank */
+.ep-cta {
+  padding: 0 clamp(16px, 4vw, 64px);
+}
+.ep-cta h2 {
+  font-size: var(--step-display);
+  margin: 0;
+  max-width: 16ch;
+}
+.ep-cta input {
+  display: inline-block;
+  width: 2.4em;
+  height: 0.96em;
+  vertical-align: baseline;
+  border: 0;
+  padding: 0 0.12em;
+  font: inherit;
+  letter-spacing: inherit;
+  color: var(--ep-ink);
+  background: var(--ep-paper);
+  text-align: center;
+}
+.ep-cta button {
+  display: inline-block;
+  height: 0.96em;
+  border: 0;
+  padding: 0 0.18em;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  background: var(--ep-blue);
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 160ms var(--ease-out);
+}
+.ep-cta button:hover {
+  transform: translateY(-3px);
+}
+.ep-cta button:active {
+  transform: translateY(1px);
+}
+.ep-cta-result {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  font-size: var(--step-body);
+}
+.ep-cta-result p {
+  max-width: 60ch;
+}
+.ep-cta-result code {
+  font-size: var(--step-lead);
+  overflow-wrap: anywhere;
+}
+
+/* Footer: the name, built large from blocks */
+.ep-foot {
+  margin-top: clamp(120px, 14vw, 220px);
+  background: var(--ep-night);
+  color: var(--ep-paper);
+  padding: clamp(48px, 6vw, 96px) clamp(16px, 4vw, 64px) 32px;
+}
+[data-theme='enterpass-light'] .ep-foot {
+  background: var(--ep-navy);
+}
+.ep-mark {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 34svh;
+  min-height: 180px;
+}
+.ep-mark span {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.08em;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--step-display);
+  line-height: 1;
+  transform-origin: bottom;
+}
+.ep-foot-cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 2fr;
+  gap: 32px;
+  margin-top: 56px;
+  font-size: var(--step-small);
+}
+.ep-foot-cols a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  text-underline-offset: 4px;
+}
+.ep-foot-cols a:hover {
+  text-decoration-color: currentColor;
+}
+.ep-foot-cols b {
+  display: block;
+  font-family: var(--font-display);
+  margin-bottom: 8px;
+}
+.ep-foot-cols ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+.ep-foot-legal {
+  margin-top: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.ep-foot-legal a:not(.ep-top) {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.ep-foot-legal a.ep-top {
+  background: var(--ep-blue);
+  color: #ffffff;
+  padding: 10px 16px;
+  font-family: var(--font-display);
+  text-decoration: none;
+  transition: transform 160ms var(--ease-out);
+}
+.ep-foot-legal a.ep-top:hover {
+  transform: translateY(-2px);
+}
+
+/* A ticket's whole life: real pictures inside the pass shape */
+.ep-history {
+  display: grid;
+  grid-template-columns: 5fr 4fr 3fr;
+  grid-template-rows: auto auto;
+  gap: 12px;
+  padding: 0 var(--ep-margin);
+  align-items: start;
+}
+.ep-history-text {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  padding: clamp(8px, 2vw, 32px) clamp(8px, 3vw, 48px) 0 clamp(8px, 2vw, 32px);
+}
+.ep-history h2 {
+  font-size: var(--step-head);
+  margin: 0;
+}
+.ep-statement {
+  font-size: var(--step-lead);
+  line-height: 1.3;
+  margin-top: clamp(20px, 2.4vw, 36px);
+  max-width: 40ch;
+}
+.ep-credits {
+  margin-top: clamp(28px, 3vw, 48px);
+  font-size: var(--step-small);
+  line-height: 1.5;
+  max-width: 52ch;
+  color: color-mix(in srgb, currentColor 78%, transparent);
+}
+.ep-credits a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.ep-photo {
+  --ep-notch: 18px;
+  --ep-notch-bg: var(--color-base-200);
+  margin: 0;
+  overflow: visible;
+}
+.ep-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ep-photo-main {
+  --ep-tear: 74%;
+  grid-column: 2 / span 2;
+  grid-row: 1;
+  aspect-ratio: 16 / 10;
+}
+.ep-photo-punch {
+  --ep-tear: 62%;
+  grid-column: 2;
+  grid-row: 2;
+  aspect-ratio: 4 / 3;
+  background: #ebe6dc;
+}
+.ep-photo-station {
+  --ep-tear: 50%;
+  grid-column: 3;
+  grid-row: 2;
+  aspect-ratio: 3 / 4;
+}
+.ep-photo-main img {
+  animation: ep-slowzoom 18s ease-in-out infinite alternate;
+}
+.ep-photo {
+  overflow: hidden;
+}
+@keyframes ep-slowzoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ep-photo-main img {
+    animation: none;
+  }
+}
+@media (max-width: 899px) {
+  .ep-history {
+    grid-template-columns: 1fr 1fr;
+  }
+  .ep-history-text {
+    grid-column: 1 / span 2;
+    grid-row: auto;
+  }
+  .ep-photo-main {
+    grid-column: 1 / span 2;
+    grid-row: auto;
+  }
+  .ep-photo-punch,
+  .ep-photo-station {
+    grid-column: auto;
+    grid-row: auto;
+    aspect-ratio: 3 / 4;
+  }
+}
+
+/* ---------- Motion: entrances, feedback, the moving picture ---------- */
+
+.ep-rise > * {
+  opacity: 1;
+  transform: none;
+}
+.ep-js .ep-rise:not(.is-in) > * {
+  opacity: 0;
+  transform: translateY(24px);
+}
+.ep-rise.is-in > * {
+  transition:
+    opacity 700ms var(--ease-out),
+    transform 700ms var(--ease-out);
+}
+.ep-rise.is-in > *:nth-child(2) {
+  transition-delay: 80ms;
+}
+.ep-rise.is-in > *:nth-child(3) {
+  transition-delay: 160ms;
+}
+.ep-rise.is-in > *:nth-child(4) {
+  transition-delay: 240ms;
+}
+.ep-rise.is-in > *:nth-child(n + 5) {
+  transition-delay: 320ms;
+}
+
+.ep-giant {
+  animation: ep-drift 14s ease-in-out infinite alternate;
+}
+@keyframes ep-drift {
+  from {
+    transform: translate(0, 0) rotate(-2deg);
+  }
+  to {
+    transform: translate(-3%, -2%) rotate(1deg);
+  }
+}
+
+.ep-mark span {
+  transition: transform 500ms var(--ease-out);
+}
+.ep-mark:hover span:nth-child(odd) {
+  transform: scaleY(0.94);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ep-giant {
+    animation: none;
+  }
+  .ep-giant-state {
+    transition: none;
+  }
+  .ep-js .ep-rise:not(.is-in) > * {
+    opacity: 1;
+    transform: none;
+  }
+  .ep-rise.is-in > * {
+    transition: none;
+  }
+}
+
+/* ---------- Phone: its own composition ---------- */
+
+@media (max-width: 899px) {
+  .ep-shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ep-field {
+    order: -1;
+    position: relative;
+    top: 0;
+    height: auto;
+    min-height: 0;
+    padding-bottom: 56px;
+  }
+  /* On a narrow screen the form must reach the first screen; the card
+     itself carries the motif, so the giant pass steps aside. */
+  .ep-giant {
+    display: none;
+  }
+  .ep-card textarea {
+    min-height: 112px;
+  }
+  .ep-jump {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: 20px;
+    padding: 12px 18px;
+    border: 0;
+    background: var(--ep-paper);
+    color: var(--ep-blue);
+    font-family: var(--font-display);
+    font-size: var(--step-body);
+  }
+  .ep-barcode {
+    height: 40px;
+    margin-bottom: 20px;
+  }
+  .ep-card {
+    margin-top: -24px;
+    min-height: 0;
+    margin-inline: 8px;
+    min-width: 0;
+    padding-inline: 20px;
+  }
+  .ep-card .ep-barcode {
+    margin-inline: -20px;
+    padding-inline: 20px;
+  }
+  .ep-fields {
+    grid-template-columns: 1fr;
+  }
+  .ep-f {
+    min-height: 64svh;
+    padding: 20px;
+  }
+  .ep-f-card {
+    position: relative;
+    top: auto;
+    left: auto;
+    translate: none;
+    margin-top: 32px;
+  }
+  .ep-f-clause {
+    order: -1;
+    margin-top: 12px;
+    font-size: 24px;
+  }
+  .ep-board {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 28vw;
+    gap: 6px;
+  }
+  .ep-w6h4,
+  .ep-w6h2 {
+    grid-column: span 2;
+    grid-row: span 3;
+  }
+  .ep-board .ep-heading {
+    grid-row: span 2;
+  }
+  .ep-w3h4,
+  .ep-w3h2 {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+  .ep-tile [data-ui] {
+    scale: 0.6;
+    transform-origin: top right;
+  }
+  .ep-f h2 {
+    order: -2;
+  }
+  .ep-cta h2 {
+    font-size: 8vw;
+  }
+  .ep-mark {
+    height: 22svh;
+  }
+  .ep-mark span {
+    font-size: 9vw;
+  }
+  .ep-foot-cols {
+    grid-template-columns: 1fr 1fr;
+  }
+  .ep-foot-legal {
+    flex-wrap: wrap;
+  }
+}

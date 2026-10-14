@@ -77,7 +77,7 @@ it('uses the default icon without its wordmark when the name is hidden', async (
   const brand = await render();
   expect(brand.textContent).toBe('');
   expect(brand.querySelector('img')!.getAttribute('src')).toBe(
-    '/entermind-pass.svg',
+    '/enterpass.svg',
   );
   expect(brand.querySelector('img')!.alt).toBe('Yopass');
   expect(document.title).toBe('Yopass');
@@ -94,12 +94,12 @@ it.each([undefined, 'Acme Secrets'])(
   },
 );
 
-it('shows the Entermind Pass icon and name when no branding options are set', async () => {
+it('shows the EnterPass icon and name when no branding options are set', async () => {
   localStorage.setItem('themeMode', 'light');
   const brand = await render();
   expect(brand.querySelector('img')!.getAttribute('src')).toBe(
-    '/entermind-pass.svg',
+    '/enterpass.svg',
   );
-  // t() is mocked to return 'Yopass' for header.appName; en.json says "Entermind Pass"
+  // t() is mocked to return 'Yopass' for header.appName; en.json says "EnterPass"
   expect(brand.textContent).toBe('Yopass');
 });

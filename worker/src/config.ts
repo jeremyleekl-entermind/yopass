@@ -1,6 +1,6 @@
 // The /config payload, with the same keys as pkg/server/config.go returns for
 // an unlicensed server (TestConfigContractKeys), minus MAX_FILE_SIZE because
-// uploads are disabled. Entermind Pass is secret sharing plus the password
+// uploads are disabled. EnterPass is secret sharing plus the password
 // generator: no uploads, no OIDC, no secret requests, no read receipts.
 
 export const EXPIRATIONS = [3600, 86400, 604800] as const; // 1h, 1d, 1w
@@ -26,6 +26,6 @@ export const CONFIG = {
   READ_RECEIPTS: false,
   REQUIRE_AUTH: false,
   SECRET_REQUESTS: false,
-  THEME_DARK: 'dim',
-  THEME_LIGHT: 'emerald',
+  THEME_DARK: 'enterpass-dark',
+  THEME_LIGHT: 'enterpass-light',
 } as const;
