@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useTheme } from '../theme/ThemeProvider';
 import { useConfig } from '../hooks/useConfig';
 import { useAuth } from '../hooks/useAuth';
 import SettingsMenu from './SettingsMenu';
@@ -20,7 +19,6 @@ export default function Navbar() {
     SECRET_REQUESTS,
     READ_RECEIPTS,
   } = useConfig();
-  const { mode } = useTheme();
   const customBranding = Boolean(LOGO_URL || APP_NAME || HIDE_APP_NAME);
   const { isAuthenticated } = useAuth();
   const { t } = useTranslation();
@@ -59,8 +57,8 @@ export default function Navbar() {
               {customBranding ? (
                 <>
                   <img
-                    src={LOGO_URL ?? '/yopass.svg'}
-                    alt={APP_NAME ?? 'Yopass'}
+                    src={LOGO_URL ?? '/entermind-pass.svg'}
+                    alt={APP_NAME ?? t('header.appName')}
                     className={`h-8 w-auto max-w-16 object-contain shrink-0${HIDE_APP_NAME ? '' : ' mr-2 sm:mr-3'}`}
                   />
                   {!HIDE_APP_NAME && (
@@ -70,17 +68,17 @@ export default function Navbar() {
                   )}
                 </>
               ) : (
-                <img
-                  src={
-                    mode === 'dark'
-                      ? '/yopass-full-dark.svg'
-                      : '/yopass-full.svg'
-                  }
-                  alt="Yopass"
-                  width={138}
-                  height={28}
-                  className="h-6 w-auto sm:h-7 shrink-0"
-                />
+                // Entermind Pass: icon + name instead of the Yopass wordmark
+                <>
+                  <img
+                    src="/entermind-pass.svg"
+                    alt=""
+                    width={32}
+                    height={32}
+                    className="h-8 w-8 shrink-0 mr-2 sm:mr-3"
+                  />
+                  <span className="truncate">{t('header.appName')}</span>
+                </>
               )}
             </a>
           </div>
