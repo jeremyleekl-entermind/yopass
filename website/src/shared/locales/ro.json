@@ -290,5 +290,29 @@
     "language": "Limbă",
     "theme": "Temă",
     "darkModeToggle": "Mod întunecat"
+  },
+  "passGen": {
+    "title": "Password Generator",
+    "subtitle": "Generate strong, random passwords in your browser. Nothing leaves this page.",
+    "lengthLabel": "Length",
+    "lengthUnit": "characters",
+    "lowercase": "Lowercase (a-z)",
+    "uppercase": "Uppercase (A-Z)",
+    "numbers": "Numbers (0-9)",
+    "symbols": "Symbols (!@#$%^&*)",
+    "excludeAmbiguous": "Exclude ambiguous characters (Il1O0)",
+    "noDuplicates": "No duplicate characters",
+    "generatedLabel": "Generated password",
+    "buttonGenerate": "Generate Password",
+    "buttonCopy": "Copy",
+    "buttonRegenerate": "Regenerate",
+    "copied": "Copied!",
+    "strengthWeak": "Weak",
+    "strengthFair": "Fair",
+    "strengthGood": "Good",
+    "strengthStrong": "Strong",
+    "strengthExcellent": "Excellent",
+    "emptyHint": "Your generated password will appear here",
+    "backToSecrets": "Back to secret sharing"
   }
 }
