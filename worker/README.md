@@ -50,10 +50,12 @@ must be a file: URL").
 `npm test`. If upstream changes the secret routes, `/config` keys or error messages
 (`pkg/server/contract_test.go`), mirror the change here.
 
-## Going live on pass.entermind.my
+## Live
 
-Preview: `https://entermind-pass.jeremy-lee-606.workers.dev`. To move the real hostname:
-1. The entermind.my zone must be **active** in the dedicated Cloudflare account.
-2. Add a Workers custom domain `pass.entermind.my` (it replaces the current tunnel CNAME).
-3. Secrets created on the old Go server don't migrate. They expire within a week at most, so
-   keep the old server reachable until then or accept that older links stop working.
+- **https://pass.entermind.my**: Workers custom domain, attached 14 Oct 2026 (declared in
+  `wrangler.jsonc` `routes`). It replaced a proxied CNAME to the `deck-entermind` tunnel
+  (`5f707938-34cb-4a20-bf7b-7837824d6bbc.cfargotunnel.com`), which was returning 502. To roll back:
+  remove the route, delete the custom domain, recreate that CNAME.
+- Preview: https://entermind-pass.jeremy-lee-606.workers.dev
+- The zone injects Cloudflare Web Analytics' beacon into pages; the CSP blocks it, so nothing is
+  collected but the browser logs one CSP error. Turn Web Analytics off for this hostname to stop it.

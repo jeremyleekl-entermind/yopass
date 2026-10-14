@@ -27,6 +27,8 @@
   // its own logs), so Workers Logs stay off.
   "observability": { "enabled": false },
   "vars": { "VERSION": "15.1.0+enterpass" },
+  // Live hostname (attached 14 Oct 2026; replaced the deck-entermind tunnel CNAME).
+  "routes": [{ "pattern": "pass.entermind.my", "custom_domain": true }],
   "workers_dev": true,
   "preview_urls": false
 }
