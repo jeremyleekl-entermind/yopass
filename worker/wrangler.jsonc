@@ -1,0 +1,32 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "entermind-pass",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  // The rebranded frontend, built by `npm run build:site`. API routes run the
+  // Worker first; every other path is a static asset (no Worker invocation,
+  // headers from _headers).
+  "assets": {
+    "directory": "../website/dist",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/create/*",
+      "/secret/*",
+      "/config",
+      "/health",
+      "/ready",
+      "/version"
+    ]
+  },
+  "durable_objects": {
+    "bindings": [{ "name": "SECRETS", "class_name": "SecretStore" }]
+  },
+  // SQLite-backed Durable Objects are the type available on the Free plan.
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["SecretStore"] }],
+  // Request logs would contain secret IDs (upstream 14.10 removed them from
+  // its own logs), so Workers Logs stay off.
+  "observability": { "enabled": false },
+  "vars": { "VERSION": "15.1.0+entermind-pass" },
+  "workers_dev": true,
+  "preview_urls": false
+}
