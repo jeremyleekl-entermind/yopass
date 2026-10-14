@@ -1,4 +1,5 @@
 import { useCycle } from './motion';
+import { goToSecret } from './nav';
 
 // The barcode band across the top of the card: the pass's own stripe, built
 // from filled bars whose widths spell ENTERPASS in bits.
@@ -62,20 +63,7 @@ export function HeroField() {
         read.
       </p>
       {/* Phones: the form sits below this field, so offer the way to it. */}
-      <button
-        type="button"
-        className="ep-jump"
-        onClick={() => {
-          const box = document.getElementById('secret');
-          if (!box) {
-            // Not on the encrypt page (e.g. the generator): go there.
-            window.location.hash = '#/';
-            return;
-          }
-          box.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          box.focus({ preventScroll: true });
-        }}
-      >
+      <button type="button" className="ep-jump" onClick={() => goToSecret()}>
         Write a secret
       </button>
       <div className="ep-giant ep-pass" aria-hidden="true">

@@ -7,10 +7,12 @@
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "e2e": "node e2e/run-all.mjs"
   },
   "devDependencies": {
     "@cloudflare/vitest-plugin": "1.4.1",
+    "playwright-core": "1.56.1",
     "typescript": "6.0.3",
     "vitest": "4.1.11",
     "wrangler": "4.150.0"

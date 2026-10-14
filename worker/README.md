@@ -8,11 +8,11 @@ read receipts are off (the latter three need a Yopass business licence anyway).
 
 ## How it works
 
-| Piece | Where |
-|---|---|
-| Frontend (React, OpenPGP.js) | Static assets from `../website/dist`; headers from `_headers` |
+| Piece                                                                                                                   | Where                                                                       |
+| ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| Frontend (React, OpenPGP.js)                                                                                            | Static assets from `../website/dist`; headers from `_headers`               |
 | `POST /create/secret`, `GET/DELETE /secret/{id}`, `GET /secret/{id}/status`, `/config`, `/health`, `/ready`, `/version` | `src/index.ts` (same wire contract as `pkg/server`, see `test/api.test.ts`) |
-| Storage | One SQLite-backed Durable Object per secret (`src/secret-store.ts`) |
+| Storage                                                                                                                 | One SQLite-backed Durable Object per secret (`src/secret-store.ts`)         |
 
 - Encryption happens in the browser. The Worker stores only PGP ciphertext and rejects anything
   that isn't an armored PGP message.
@@ -40,6 +40,30 @@ npm run typecheck
 npx wrangler dev     # local, http://127.0.0.1:8787
 npm run deploy       # needs CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID in the environment
 ```
+
+## Before every deploy
+
+Run all of it; deploy only when every line passes.
+
+```sh
+# website
+cd ../website
+NODE_OPTIONS=--no-experimental-webstorage npx vitest run   # 145 unit tests
+npx eslint . && npx prettier --check src tests && node scripts/check-locales.mjs
+cd ../worker
+npm run build:site            # tsc + vite build, copies _headers
+npx tsc --noEmit && npm test  # Worker types + 35 runtime tests
+npx wrangler dev              # in another terminal
+npm run e2e                   # browser gate against http://127.0.0.1:8787
+npm run deploy
+npm run e2e -- https://pass.entermind.my   # same gate on the live site
+```
+
+`npm run e2e` (needs Microsoft Edge, or `E2E_CHANNEL=chrome`) runs four checks in `e2e/`:
+`flow` (create, reveal once, second open gone, generator, branding, no page errors), `mobile`
+(every screen at 360/390/768: no sideways scroll, nothing off-screen, no text under 13px),
+`footer` (each footer link visibly takes you somewhere) and `clicks` (every link and button on
+every page has a visible effect). Screenshots land in `e2e/.shots/` (gitignored).
 
 vitest is pinned to 4.1: `@cloudflare/vitest-plugin` fails on Windows with vitest 5 ("File path
 must be a file: URL").

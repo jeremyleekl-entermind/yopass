@@ -23,6 +23,7 @@ import {
 } from '../enterpass/Sections';
 import { EnterFooter } from '../enterpass/Footer';
 import { useMotionReady } from '../enterpass/motion';
+import { ScrollToTop } from '../enterpass/nav';
 
 // The landing sections belong to the home page only.
 function HomeSections() {
@@ -80,6 +81,7 @@ export default function App() {
         {t('accessibility.skipToContent')}
       </button>
       <HashRouter>
+        <ScrollToTop />
         <Navbar />
 
         {/* Main Content */}

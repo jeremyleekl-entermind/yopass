@@ -1,4 +1,5 @@
 import { useRise } from './motion';
+import { goToSecret, toTopIfSamePage } from './nav';
 
 // The name closes the page as a construction: each letter knocked out of its
 // own block, blocks of different heights on one baseline.
@@ -49,10 +50,14 @@ export function EnterFooter({
           <b>EnterPass</b>
           <ul>
             <li>
-              <a href="#/">Send a secret</a>
+              <a href="#/" onClick={goToSecret}>
+                Send a secret
+              </a>
             </li>
             <li>
-              <a href="#/generate">Password generator</a>
+              <a href="#/generate" onClick={toTopIfSamePage}>
+                Password generator
+              </a>
             </li>
           </ul>
         </div>
@@ -119,7 +124,7 @@ export function EnterFooter({
             </a>
           </span>
         </div>
-        <a className="ep-top" href="#/">
+        <a className="ep-top" href="#/" onClick={goToSecret}>
           Send a secret
         </a>
       </div>
