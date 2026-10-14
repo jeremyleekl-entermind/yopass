@@ -116,7 +116,9 @@ export default function App() {
                 )}
                 <Route
                   path="/generate"
-                  element={needsLogin ? <LoginRequired /> : <PasswordGenerator />}
+                  element={
+                    needsLogin ? <LoginRequired /> : <PasswordGenerator />
+                  }
                 />
                 {SECRET_REQUESTS && (
                   <>
@@ -177,14 +179,14 @@ export default function App() {
                 </>
               )}
               <span className="text-base-content/70">
-                &copy; 2014&ndash;{new Date().getFullYear()}{' '}
+                &copy; {new Date().getFullYear()}{' '}
                 <a
-                  href="https://yopass.se"
+                  href="https://entermind.com"
                   className="text-primary hover:text-primary-focus font-medium transition-colors duration-200 underline decoration-dotted underline-offset-4 hover:decoration-solid"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Yopass
+                  Entermind
                 </a>
               </span>
             </div>
