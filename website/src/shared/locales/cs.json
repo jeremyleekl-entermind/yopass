@@ -116,25 +116,25 @@
   },
   "features": {
     "title": "Sdílejte tajné zprávy snadno a bezpečně",
-    "subtitle": "Yopass byl vytvořen ke snížení množství hesel zasílaných v textu e-mailových a chatových konverzací. Toho dosáhne pomocí šifrování a generování krátkodobého odkazu, který lze zobrazit pouze jednou.",
+    "subtitle": "EnterPass byl vytvořen ke snížení množství hesel zasílaných v textu e-mailových a chatových konverzací. Toho dosáhne pomocí šifrování a generování krátkodobého odkazu, který lze zobrazit pouze jednou.",
     "featureEndToEndTitle": "End-to-End šifrování",
-    "featureEndToEndText": "Šifrování a dešifrování se provádí lokálně v prohlížeči. Klíč není nikdy uložen u yopass.",
+    "featureEndToEndText": "Šifrování a dešifrování se provádí lokálně v prohlížeči. Klíč není nikdy uložen u EnterPass.",
     "featureSelfDestructionTitle": "Sebedestrukce",
     "featureSelfDestructionText": "Šifrované zprávy mají pevně stanovenou dobu platnosti a po jejím uplynutí budou automaticky smazány.",
     "featureOneTimeTitle": "Jednorázová stažení",
     "featureOneTimeText": "Šifrovanou zprávu lze stáhnout pouze jednou. To snižuje riziko, že si vaši zprávu přečte někdo nezvaný.",
     "featureSimpleSharingTitle": "Jednoduché sdílení",
-    "featureSimpleSharingText": "Yopass generuje pro šifrovaný soubor nebo zprávu jedinečný odkaz, který lze otevřít jedním kliknutím. Heslo pro dešifrování lze alternativně zaslat samostatně.",
+    "featureSimpleSharingText": "EnterPass generuje pro šifrovaný soubor nebo zprávu jedinečný odkaz, který lze otevřít jedním kliknutím. Heslo pro dešifrování lze alternativně zaslat samostatně.",
     "featureNoAccountsTitle": "Není třeba zakládat účty",
     "featureNoAccountsText": "Sdílení je rychlé a snadné. V databázi nejsou uloženy žádné další informace kromě šifrované zprávy.",
     "featureOpenSourceTitle": "Open source software",
-    "featureOpenSourceText": "Šifrovací mechanismus Yopass je postaven na open source softwaru, který je transparentní a má možnost auditu a návrhu funkcí."
+    "featureOpenSourceText": "Šifrovací mechanismus EnterPass je postaven na open source softwaru, který je transparentní a má možnost auditu a návrhu funkcí."
   },
   "header": {
     "buttonHome": "Domů",
     "buttonUpload": "Nahrát",
     "buttonText": "Text",
-    "appName": "Yopass",
+    "appName": "EnterPass",
     "buttonRequests": "Žádosti",
     "requestsWithCount": "{{count}} tajemství čeká na vyzvednutí",
     "buttonReceipts": "Potvrzení"

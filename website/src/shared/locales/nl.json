@@ -116,25 +116,25 @@
   },
   "features": {
     "title": "Deel geheimen veilig en eenvoudig",
-    "subtitle": "Yopass is gemaakt om het aantal platte tekstwachtwoorden dat in e-mail- en chatgesprekken wordt opgeslagen te verminderen door deze te versleutelen en een kortlevende link te genereren die slechts één keer kan worden bekeken.",
+    "subtitle": "EnterPass is gemaakt om het aantal platte tekstwachtwoorden dat in e-mail- en chatgesprekken wordt opgeslagen te verminderen door deze te versleutelen en een kortlevende link te genereren die slechts één keer kan worden bekeken.",
     "featureEndToEndTitle": "End-to-end versleuteling",
-    "featureEndToEndText": "Versleuteling en ontsleuteling vinden lokaal in de browser plaats. De sleutel wordt nooit opgeslagen bij Yopass.",
+    "featureEndToEndText": "Versleuteling en ontsleuteling vinden lokaal in de browser plaats. De sleutel wordt nooit opgeslagen bij EnterPass.",
     "featureSelfDestructionTitle": "Zelfvernietiging",
     "featureSelfDestructionText": "Versleutelde berichten hebben een vaste levensduur en worden automatisch verwijderd na verloop van tijd.",
     "featureOneTimeTitle": "Eenmalige downloads",
     "featureOneTimeText": "Het versleutelde bericht kan slechts één keer worden gedownload, wat het risico vermindert dat iemand je geheimen bekijkt.",
     "featureSimpleSharingTitle": "Eenvoudig delen",
-    "featureSimpleSharingText": "Yopass genereert een unieke één-klik link voor het versleutelde bestand of bericht. Het ontsleutelingswachtwoord kan eventueel apart worden verzonden.",
+    "featureSimpleSharingText": "EnterPass genereert een unieke één-klik link voor het versleutelde bestand of bericht. Het ontsleutelingswachtwoord kan eventueel apart worden verzonden.",
     "featureNoAccountsTitle": "Geen accounts nodig",
     "featureNoAccountsText": "Delen moet snel en eenvoudig zijn; Geen extra informatie behalve het versleutelde geheim wordt in de database opgeslagen.",
     "featureOpenSourceTitle": "Open source software",
-    "featureOpenSourceText": "Het versleutelingsmechanisme van Yopass is gebaseerd op open source software, wat volledige transparantie betekent met de mogelijkheid om te controleren en functies in te dienen."
+    "featureOpenSourceText": "Het versleutelingsmechanisme van EnterPass is gebaseerd op open source software, wat volledige transparantie betekent met de mogelijkheid om te controleren en functies in te dienen."
   },
   "header": {
     "buttonHome": "Home",
     "buttonUpload": "Uploaden",
     "buttonText": "Tekst",
-    "appName": "Yopass",
+    "appName": "EnterPass",
     "buttonRequests": "Verzoeken",
     "requestsWithCount": "{{count}} geheimen wachten op ophaling",
     "buttonReceipts": "Bevestigingen"

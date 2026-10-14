@@ -116,25 +116,25 @@
   },
   "features": {
     "title": "秘密を安全かつ簡単に共有",
-    "subtitle": "Yopassは、メールやチャットに平文のパスワードが残るのを減らすために作られました。秘密を暗号化し、1回だけ閲覧できる短期間有効なリンクを生成します。",
+    "subtitle": "EnterPassは、メールやチャットに平文のパスワードが残るのを減らすために作られました。秘密を暗号化し、1回だけ閲覧できる短期間有効なリンクを生成します。",
     "featureEndToEndTitle": "エンドツーエンド暗号化",
-    "featureEndToEndText": "暗号化と復号はブラウザ内でローカルに行われます。キーがYopassに保存されることはありません。",
+    "featureEndToEndText": "暗号化と復号はブラウザ内でローカルに行われます。キーがEnterPassに保存されることはありません。",
     "featureSelfDestructionTitle": "自動削除",
     "featureSelfDestructionText": "暗号化されたメッセージには有効期限があり、期限切れ後に自動的に削除されます。",
     "featureOneTimeTitle": "1回限りのダウンロード",
     "featureOneTimeText": "暗号化されたメッセージは1回しかダウンロードできないため、秘密をのぞき見されるリスクを減らせます。",
     "featureSimpleSharingTitle": "簡単な共有",
-    "featureSimpleSharingText": "Yopassは、暗号化されたファイルやメッセージごとに固有のワンクリックリンクを生成します。復号パスワードは別の手段で送ることもできます。",
+    "featureSimpleSharingText": "EnterPassは、暗号化されたファイルやメッセージごとに固有のワンクリックリンクを生成します。復号パスワードは別の手段で送ることもできます。",
     "featureNoAccountsTitle": "アカウント不要",
     "featureNoAccountsText": "共有は素早く簡単に行えるべきです。データベースに保存されるのは、暗号化された秘密だけです。",
     "featureOpenSourceTitle": "オープンソース",
-    "featureOpenSourceText": "Yopassの暗号化の仕組みはオープンソースで公開されており、透明性が高く、監査や機能改善の提案も行えます。"
+    "featureOpenSourceText": "EnterPassの暗号化の仕組みはオープンソースで公開されており、透明性が高く、監査や機能改善の提案も行えます。"
   },
   "header": {
     "buttonHome": "ホーム",
     "buttonUpload": "アップロード",
     "buttonText": "テキスト",
-    "appName": "Yopass",
+    "appName": "EnterPass",
     "buttonRequests": "リクエスト",
     "requestsWithCount": "{{count}}件のシークレットが受け取り待ちです",
     "buttonReceipts": "開封確認"

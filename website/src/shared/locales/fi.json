@@ -116,25 +116,25 @@
   },
   "features": {
     "title": "Jaa salaisuuksia turvallisesti ja vaivattomasti",
-    "subtitle": "Yopass on luotu vähentämään selväkielisten salasanojen määrää sähköposti- ja chat‑keskusteluissa salaamalla ne ja luomalla lyhytikäisen linkin, jonka voi avata vain kerran.",
+    "subtitle": "EnterPass on luotu vähentämään selväkielisten salasanojen määrää sähköposti- ja chat‑keskusteluissa salaamalla ne ja luomalla lyhytikäisen linkin, jonka voi avata vain kerran.",
     "featureEndToEndTitle": "Päästä päähän -salaus",
-    "featureEndToEndText": "Salaus ja salauksen purku tehdään paikallisesti selaimessa. Purkuavainta ei koskaan tallenneta Yopassin palvelimelle.",
+    "featureEndToEndText": "Salaus ja salauksen purku tehdään paikallisesti selaimessa. Purkuavainta ei koskaan tallenneta EnterPassin palvelimelle.",
     "featureSelfDestructionTitle": "Automaattinen tuhoutuminen",
     "featureSelfDestructionText": "Salatuilla viesteillä on kiinteä elinkaari ja ne poistetaan automaattisesti vanhentumisen jälkeen.",
     "featureOneTimeTitle": "Kertaluonteiset lataukset",
     "featureOneTimeText": "Salattu viesti voidaan ladata vain kerran, mikä vähentää riskiä siitä, että joku pääsee kurkistamaan salaisuuksiisi.",
     "featureSimpleSharingTitle": "Helppo jakaminen",
-    "featureSimpleSharingText": "Yopass luo yksilöllisen yhden klikkauksen linkin salattuun tiedostoon tai viestiin. Purkuavain voidaan vaihtoehtoisesti lähettää erikseen.",
+    "featureSimpleSharingText": "EnterPass luo yksilöllisen yhden klikkauksen linkin salattuun tiedostoon tai viestiin. Purkuavain voidaan vaihtoehtoisesti lähettää erikseen.",
     "featureNoAccountsTitle": "Ei käyttäjätilejä",
     "featureNoAccountsText": "Jakamisen tulee olla nopeaa ja helppoa; tietokantaan ei tallenneta mitään muuta kuin salattu salaisuus.",
     "featureOpenSourceTitle": "Avoimen lähdekoodin ohjelmisto",
-    "featureOpenSourceText": "Yopassin salausmekanismit perustuvat avoimeen lähdekoodiin, mikä takaa täyden läpinäkyvyyden sekä mahdollisuuden auditointiin ja parannusten lähettämiseen."
+    "featureOpenSourceText": "EnterPassin salausmekanismit perustuvat avoimeen lähdekoodiin, mikä takaa täyden läpinäkyvyyden sekä mahdollisuuden auditointiin ja parannusten lähettämiseen."
   },
   "header": {
     "buttonHome": "Etusivu",
     "buttonUpload": "Lataa",
     "buttonText": "Teksti",
-    "appName": "Yopass",
+    "appName": "EnterPass",
     "buttonRequests": "Pyynnöt",
     "requestsWithCount": "{{count}} salaisuutta odottaa noutamista",
     "buttonReceipts": "Kuittaukset"

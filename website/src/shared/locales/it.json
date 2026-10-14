@@ -116,25 +116,25 @@
   },
   "features": {
     "title": "Condividi segreti in modo sicuro e semplice",
-    "subtitle": "Yopass è stato creato per ridurre la quantità di password in chiaro salvate in email e chat, criptando il contenuto e generando un link a breve durata visualizzabile una sola volta.",
+    "subtitle": "EnterPass è stato creato per ridurre la quantità di password in chiaro salvate in email e chat, criptando il contenuto e generando un link a breve durata visualizzabile una sola volta.",
     "featureEndToEndTitle": "Crittografia end-to-end",
-    "featureEndToEndText": "La crittografia e la decrittazione avvengono localmente nel browser. La chiave non viene mai salvata su Yopass.",
+    "featureEndToEndText": "La crittografia e la decrittazione avvengono localmente nel browser. La chiave non viene mai salvata su EnterPass.",
     "featureSelfDestructionTitle": "Autodistruzione",
     "featureSelfDestructionText": "I messaggi criptati hanno una durata fissa e vengono eliminati automaticamente alla scadenza.",
     "featureOneTimeTitle": "Scaricabile una sola volta",
     "featureOneTimeText": "Il messaggio criptato può essere scaricato una sola volta, riducendo il rischio che qualcuno sbirci i tuoi segreti.",
     "featureSimpleSharingTitle": "Condivisione semplice",
-    "featureSimpleSharingText": "Yopass genera un link univoco apribile con un solo clic per il file o il messaggio crittografato. La password di decrittazione può essere inviata separatamente.",
+    "featureSimpleSharingText": "EnterPass genera un link univoco apribile con un solo clic per il file o il messaggio crittografato. La password di decrittazione può essere inviata separatamente.",
     "featureNoAccountsTitle": "Nessun account necessario",
     "featureNoAccountsText": "La condivisione deve essere rapida e semplice; nel database non viene memorizzata alcuna informazione oltre al segreto criptato.",
     "featureOpenSourceTitle": "Software open source",
-    "featureOpenSourceText": "Il meccanismo di crittografia di Yopass è basato su software open source, offrendo piena trasparenza e la possibilità di audit e contributi."
+    "featureOpenSourceText": "Il meccanismo di crittografia di EnterPass è basato su software open source, offrendo piena trasparenza e la possibilità di audit e contributi."
   },
   "header": {
     "buttonHome": "Home",
     "buttonUpload": "Carica",
     "buttonText": "Testo",
-    "appName": "Yopass",
+    "appName": "EnterPass",
     "buttonRequests": "Richieste",
     "requestsWithCount": "{{count}} segreti in attesa di essere raccolti",
     "buttonReceipts": "Conferme"

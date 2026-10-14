@@ -116,25 +116,25 @@
   },
   "features": {
     "title": "Geheimnisse sicher und einfach teilen",
-    "subtitle": "Yopass wurde entwickelt, um die Menge an Klartext-Passwörtern in E-Mails und Chats zu reduzieren, indem es diese verschlüsselt und einen kurzlebigen Link erstellt, der nur einmal angesehen werden kann.",
+    "subtitle": "EnterPass wurde entwickelt, um die Menge an Klartext-Passwörtern in E-Mails und Chats zu reduzieren, indem es diese verschlüsselt und einen kurzlebigen Link erstellt, der nur einmal angesehen werden kann.",
     "featureEndToEndTitle": "Ende-zu-Ende-Verschlüsselung",
-    "featureEndToEndText": "Verschlüsselung und Entschlüsselung erfolgen lokal im Browser. Der Schlüssel wird nie bei Yopass gespeichert.",
+    "featureEndToEndText": "Verschlüsselung und Entschlüsselung erfolgen lokal im Browser. Der Schlüssel wird nie bei EnterPass gespeichert.",
     "featureSelfDestructionTitle": "Selbstzerstörung",
     "featureSelfDestructionText": "Verschlüsselte Nachrichten haben eine feste Lebensdauer und werden nach Ablauf automatisch gelöscht.",
     "featureOneTimeTitle": "Einmal-Downloads",
     "featureOneTimeText": "Die verschlüsselte Nachricht kann nur einmal heruntergeladen werden, was das Risiko verringert, dass jemand deine Geheimnisse ausspäht.",
     "featureSimpleSharingTitle": "Einfaches Teilen",
-    "featureSimpleSharingText": "Yopass erstellt einen eindeutigen Ein-Klick-Link für die verschlüsselte Datei oder Nachricht. Das Entschlüsselungspasswort kann alternativ separat gesendet werden.",
+    "featureSimpleSharingText": "EnterPass erstellt einen eindeutigen Ein-Klick-Link für die verschlüsselte Datei oder Nachricht. Das Entschlüsselungspasswort kann alternativ separat gesendet werden.",
     "featureNoAccountsTitle": "Keine Konten erforderlich",
     "featureNoAccountsText": "Teilen soll schnell und einfach sein; außer dem verschlüsselten Geheimnis werden keine weiteren Informationen in der Datenbank gespeichert.",
     "featureOpenSourceTitle": "Open-Source-Software",
-    "featureOpenSourceText": "Der Yopass-Verschlüsselungsmechanismus basiert auf Open-Source-Software, was volle Transparenz sowie die Möglichkeit zur Prüfung und Einreichung von Features bietet."
+    "featureOpenSourceText": "Der EnterPass-Verschlüsselungsmechanismus basiert auf Open-Source-Software, was volle Transparenz sowie die Möglichkeit zur Prüfung und Einreichung von Features bietet."
   },
   "header": {
     "buttonHome": "Startseite",
     "buttonUpload": "Hochladen",
     "buttonText": "Text",
-    "appName": "Yopass",
+    "appName": "EnterPass",
     "buttonRequests": "Anfragen",
     "requestsWithCount": "{{count}} Geheimnisse warten auf Abholung",
     "buttonReceipts": "Bestätigungen"

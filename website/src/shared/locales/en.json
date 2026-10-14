@@ -116,25 +116,25 @@
   },
   "features": {
     "title": "Share secrets securely with ease",
-    "subtitle": "Entermind Pass reduces the amount of clear text passwords stored in email and chat conversations by encrypting and generating a short lived link which can only be viewed once.",
+    "subtitle": "EnterPass reduces the amount of clear text passwords stored in email and chat conversations by encrypting and generating a short lived link which can only be viewed once.",
     "featureEndToEndTitle": "End-to-End Encryption",
-    "featureEndToEndText": "Encryption and decryption happen locally in your browser. The key is never stored with Entermind Pass.",
+    "featureEndToEndText": "Encryption and decryption happen locally in your browser. The key is never stored with EnterPass.",
     "featureSelfDestructionTitle": "Self Destruction",
     "featureSelfDestructionText": "Encrypted messages have a fixed lifetime and will be deleted automatically after expiration.",
     "featureOneTimeTitle": "One-time Downloads",
     "featureOneTimeText": "The encrypted message can only be downloaded once which reduces the risk of someone peeking at your secrets.",
     "featureSimpleSharingTitle": "Simple Sharing",
-    "featureSimpleSharingText": "Entermind Pass generates a unique one-click link for the encrypted file or message. The decryption password can alternatively be sent separately.",
+    "featureSimpleSharingText": "EnterPass generates a unique one-click link for the encrypted file or message. The decryption password can alternatively be sent separately.",
     "featureNoAccountsTitle": "No Accounts Needed",
     "featureNoAccountsText": "Sharing should be quick and easy; No additional information except the encrypted secret is stored in the database.",
     "featureOpenSourceTitle": "Open Source Software",
-    "featureOpenSourceText": "Entermind Pass encryption is built on open source software, meaning full transparency with the possibility to audit and submit features."
+    "featureOpenSourceText": "EnterPass encryption is built on open source software, meaning full transparency with the possibility to audit and submit features."
   },
   "header": {
     "buttonHome": "Home",
     "buttonUpload": "Upload",
     "buttonText": "Text",
-    "appName": "Entermind Pass",
+    "appName": "EnterPass",
     "buttonRequests": "Requests",
     "requestsWithCount": "{{count}} secrets waiting to be collected",
     "buttonReceipts": "Receipts"

@@ -116,25 +116,25 @@
   },
   "features": {
     "title": "Del nemt hemmeligheder sikkert",
-    "subtitle": "Yopass er skabt for at mindske antallet af adgangskoder i klartekst i e-mails og chats ved at kryptere dem og generere et kortvarigt link, der kun kan åbnes én gang.",
+    "subtitle": "EnterPass er skabt for at mindske antallet af adgangskoder i klartekst i e-mails og chats ved at kryptere dem og generere et kortvarigt link, der kun kan åbnes én gang.",
     "featureEndToEndTitle": "End-to-end-kryptering",
-    "featureEndToEndText": "Kryptering og dekryptering foregår lokalt i browseren. Nøglen gemmes aldrig hos Yopass.",
+    "featureEndToEndText": "Kryptering og dekryptering foregår lokalt i browseren. Nøglen gemmes aldrig hos EnterPass.",
     "featureSelfDestructionTitle": "Automatisk sletning",
     "featureSelfDestructionText": "Krypterede beskeder har en fast levetid og slettes automatisk, når de udløber.",
     "featureOneTimeTitle": "Download én gang",
     "featureOneTimeText": "Den krypterede besked kan kun downloades én gang, hvilket mindsker risikoen for, at andre læser dine hemmeligheder.",
     "featureSimpleSharingTitle": "Nem deling",
-    "featureSimpleSharingText": "Yopass genererer et unikt link, der giver adgang til den krypterede fil eller besked med ét klik. Adgangskoden til dekryptering kan også sendes separat.",
+    "featureSimpleSharingText": "EnterPass genererer et unikt link, der giver adgang til den krypterede fil eller besked med ét klik. Adgangskoden til dekryptering kan også sendes separat.",
     "featureNoAccountsTitle": "Ingen konto nødvendig",
     "featureNoAccountsText": "Deling skal være hurtig og nem. Kun den krypterede hemmelighed gemmes i databasen.",
     "featureOpenSourceTitle": "Open source-software",
-    "featureOpenSourceText": "Yopass' kryptering bygger på open source-software, som giver fuld gennemsigtighed og mulighed for at gennemgå koden og bidrage med funktioner."
+    "featureOpenSourceText": "EnterPass' kryptering bygger på open source-software, som giver fuld gennemsigtighed og mulighed for at gennemgå koden og bidrage med funktioner."
   },
   "header": {
     "buttonHome": "Forside",
     "buttonUpload": "Upload",
     "buttonText": "Tekst",
-    "appName": "Yopass",
+    "appName": "EnterPass",
     "buttonRequests": "Anmodninger",
     "requestsWithCount": "{{count}} hemmeligheder venter på at blive hentet",
     "buttonReceipts": "Kvitteringer"

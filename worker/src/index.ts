@@ -1,4 +1,4 @@
-// Entermind Pass: the Yopass secret API on Cloudflare Workers.
+// EnterPass: the Yopass secret API on Cloudflare Workers.
 //
 // Re-implements the unlicensed, upload-free subset of pkg/server (routes in
 // server.go HTTPHandler, wire contract in contract_test.go) so the rebranded

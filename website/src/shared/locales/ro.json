@@ -116,25 +116,25 @@
   },
   "features": {
     "title": "Distribuie secrete în siguranță și simplu",
-    "subtitle": "Yopass a fost creat pentru a reduce numărul parolelor necriptate din emailuri și chat prin criptare și generarea unui link temporar care poate fi vizualizat o singură dată.",
+    "subtitle": "EnterPass a fost creat pentru a reduce numărul parolelor necriptate din emailuri și chat prin criptare și generarea unui link temporar care poate fi vizualizat o singură dată.",
     "featureEndToEndTitle": "Criptare end-to-end",
-    "featureEndToEndText": "Criptarea și decriptarea sunt efectuate local, în browser. Cheia de decriptare nu e stocată în Yopass.",
+    "featureEndToEndText": "Criptarea și decriptarea sunt efectuate local, în browser. Cheia de decriptare nu e stocată în EnterPass.",
     "featureSelfDestructionTitle": "Autodistrugere",
     "featureSelfDestructionText": "Mesajele criptate au o durată de viață fixă și limitată și vor fi șterse automat după expirare.",
     "featureOneTimeTitle": "Descărcări unice",
     "featureOneTimeText": "Mesajul criptat poate fi descărcat o singură dată, reducând riscul ca cineva să vadă secretele tale.",
     "featureSimpleSharingTitle": "Partajare simplă",
-    "featureSimpleSharingText": "Yopass generează un link unic pentru fișierul sau mesajul criptat. Parola de decriptare poate fi trimisă separat.",
+    "featureSimpleSharingText": "EnterPass generează un link unic pentru fișierul sau mesajul criptat. Parola de decriptare poate fi trimisă separat.",
     "featureNoAccountsTitle": "Nu necesită cont",
     "featureNoAccountsText": "Partajarea trebuie să fie rapidă și simplă; în baza de date nu sunt stocate alte informații în afară de secretul criptat.",
     "featureOpenSourceTitle": "Software open source",
-    "featureOpenSourceText": "Mecanismele de criptare Yopass sunt construite pe software open source, oferind transparență totală și posibilitatea de audit și contribuții."
+    "featureOpenSourceText": "Mecanismele de criptare EnterPass sunt construite pe software open source, oferind transparență totală și posibilitatea de audit și contribuții."
   },
   "header": {
     "buttonHome": "Acasă",
     "buttonUpload": "Încarcă",
     "buttonText": "Text",
-    "appName": "Yopass",
+    "appName": "EnterPass",
     "buttonRequests": "Cereri",
     "requestsWithCount": "{{count}} secrete așteaptă să fie deschise",
     "buttonReceipts": "Confirmări"

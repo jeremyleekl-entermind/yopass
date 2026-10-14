@@ -1,4 +1,4 @@
-# Entermind Pass on Cloudflare Workers
+# EnterPass on Cloudflare Workers
 
 The Yopass secret API re-implemented as a Cloudflare Worker, serving the rebranded frontend in
 `../website`. Runs on the Workers **Free** plan; no Go server, no memcached/Redis.

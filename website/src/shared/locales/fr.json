@@ -116,7 +116,7 @@
   },
   "features": {
     "title": "Partagez facilement vos secrets de manière sécurisée",
-    "subtitle": "Yopass a été créé pour réduire le nombre de mot de passe en clair dans les emails et les chats, en chiffrant votre secret et en générant un lien visible une seule fois.",
+    "subtitle": "EnterPass a été créé pour réduire le nombre de mot de passe en clair dans les emails et les chats, en chiffrant votre secret et en générant un lien visible une seule fois.",
     "featureEndToEndTitle": "Chiffrement de bout-en-bout",
     "featureEndToEndText": "Les chiffrements et déchiffrements sont faits localement dans le navigateur. La clé n'est jamais stockée sur le serveur.",
     "featureSelfDestructionTitle": "Auto-destruction",
@@ -124,17 +124,17 @@
     "featureOneTimeTitle": "Téléchargement unique",
     "featureOneTimeText": "Les messages chiffrés sont consultables qu'une seule fois, réduisant le risque de consultation par un tiers.",
     "featureSimpleSharingTitle": "Partage rapide",
-    "featureSimpleSharingText": "Yopass génère un lien unique pour le message ou le fichier chiffré. La clé de déchiffrement peut aussi être envoyée séparément.",
+    "featureSimpleSharingText": "EnterPass génère un lien unique pour le message ou le fichier chiffré. La clé de déchiffrement peut aussi être envoyée séparément.",
     "featureNoAccountsTitle": "Pas besoin de compte",
     "featureNoAccountsText": "Partager des secrets doit être simple et rapide. Aucune information additionnelle n'est stockée en base de données.",
     "featureOpenSourceTitle": "Logiciel Open Source",
-    "featureOpenSourceText": "Yopass utilise un protocole de chiffrement basé sur un logiciel Open Source afin de rendre possible les audits et la soumission de fonctionnalités."
+    "featureOpenSourceText": "EnterPass utilise un protocole de chiffrement basé sur un logiciel Open Source afin de rendre possible les audits et la soumission de fonctionnalités."
   },
   "header": {
     "buttonHome": "Accueil",
     "buttonUpload": "Téléverser",
     "buttonText": "Texte",
-    "appName": "Yopass",
+    "appName": "EnterPass",
     "buttonRequests": "Demandes",
     "requestsWithCount": "{{count}} secrets en attente de récupération",
     "buttonReceipts": "Accusés"

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <title>EnterPass</title>
+  <defs>
+    <mask id="tear">
+      <rect width="96" height="96" fill="#fff"/>
+      <circle cx="66" cy="20" r="8" fill="#000"/>
+      <circle cx="66" cy="76" r="8" fill="#000"/>
+    </mask>
+  </defs>
+  <rect x="4" y="20" width="88" height="56" fill="#1e40ff" mask="url(#tear)"/>
+  <rect x="74" y="36" width="10" height="24" fill="#00d670"/>
+</svg>

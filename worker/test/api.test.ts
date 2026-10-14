@@ -77,7 +77,7 @@ describe('route contract (default unlicensed, uploads disabled)', () => {
   it('serves the rebranded frontend for /', async () => {
     const res = await call('/');
     expect(res.status).toBe(200);
-    expect(await res.text()).toContain('Entermind Pass');
+    expect(await res.text()).toContain('EnterPass');
   });
 
   it('returns the unlicensed /config key set without MAX_FILE_SIZE', async () => {

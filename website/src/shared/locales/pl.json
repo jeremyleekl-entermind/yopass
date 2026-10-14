@@ -116,25 +116,25 @@
   },
   "features": {
     "title": "Udostępniaj sekrety bezpiecznie i łatwo",
-    "subtitle": "Yopass powstał, aby ograniczyć ilość poufnych danych przesyłanych otwartym tekstem w e-mailach i komunikatorach – szyfruje i generuje krótkotrwały link dostępny tylko raz.",
+    "subtitle": "EnterPass powstał, aby ograniczyć ilość poufnych danych przesyłanych otwartym tekstem w e-mailach i komunikatorach – szyfruje i generuje krótkotrwały link dostępny tylko raz.",
     "featureEndToEndTitle": "Szyfrowanie end-to-end",
-    "featureEndToEndText": "Szyfrowanie i deszyfrowanie odbywają się lokalnie w przeglądarce. Klucz nigdy nie jest przechowywany przez Yopass.",
+    "featureEndToEndText": "Szyfrowanie i deszyfrowanie odbywają się lokalnie w przeglądarce. Klucz nigdy nie jest przechowywany przez EnterPass.",
     "featureSelfDestructionTitle": "Samozniszczenie",
     "featureSelfDestructionText": "Zaszyfrowane wiadomości mają określony czas życia i są automatycznie usuwane po jego upływie.",
     "featureOneTimeTitle": "Jednorazowe pobranie",
     "featureOneTimeText": "Zaszyfrowaną wiadomość można pobrać tylko raz, co minimalizuje ryzyko nieautoryzowanego wglądu.",
     "featureSimpleSharingTitle": "Proste udostępnianie",
-    "featureSimpleSharingText": "Yopass generuje unikalny link jednego kliknięcia do zaszyfrowanej wiadomości lub pliku. Hasło deszyfrujące można wysłać osobno.",
+    "featureSimpleSharingText": "EnterPass generuje unikalny link jednego kliknięcia do zaszyfrowanej wiadomości lub pliku. Hasło deszyfrujące można wysłać osobno.",
     "featureNoAccountsTitle": "Bez kont i logowania",
     "featureNoAccountsText": "Udostępnianie ma być szybkie i łatwe – jedyne dane przechowywane na serwerze to zaszyfrowany sekret.",
     "featureOpenSourceTitle": "Oprogramowanie open source",
-    "featureOpenSourceText": "Mechanizm szyfrowania Yopass opiera się na oprogramowaniu open source – pełna przejrzystość i możliwość audytu."
+    "featureOpenSourceText": "Mechanizm szyfrowania EnterPass opiera się na oprogramowaniu open source – pełna przejrzystość i możliwość audytu."
   },
   "header": {
     "buttonHome": "Strona główna",
     "buttonUpload": "Wgraj",
     "buttonText": "Tekst",
-    "appName": "Yopass",
+    "appName": "EnterPass",
     "buttonRequests": "Żądania",
     "requestsWithCount": "{{count}} tajemnic czeka na odebranie",
     "buttonReceipts": "Potwierdzenia"
